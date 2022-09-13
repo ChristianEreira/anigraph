@@ -1,0 +1,35 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/edit/**",
+        "destination": "/edit.html"
+      },
+      {
+        "source": "/view/**",
+        "destination": "/view.html"
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5123
+    },
+    "ui": {
+      "enabled": false
+    }
+  },
+  "functions": {
+    "source": "functions"
+  }
+}

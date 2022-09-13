@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Graph | Anigraph</title>
+
+    <script src="../view.bundle.js"></script>
+</head>
+
+<body class="fullPage">
+    <header>
+        <a href="../signed-in.html">
+            <h1>Anigraph</h1>
+        </a>
+        <span id="projectName"></span>
+        <div></div>
+    </header>
+
+    <div class="columnContent">
+        <div class="graphColumn">
+            <canvas id="graph"></canvas>
+            <div id="animationControls" class="hidden">
+                <button id="playButton"></button>
+                <input type="range" id="trackbar" min="0" value="0" step="1">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

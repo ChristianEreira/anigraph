@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Anigraph</title>
+
+    <script src="signed-in.bundle.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../">
+            <h1>Anigraph</h1>
+        </a>
+        <div>
+            <img id='profileImg' src="" alt="Profile picture">
+            <div id="userDropTrigger" class="headerLink">
+                <p id="username">...</p>
+                <div id="profileDropDownButton"></div>
+            </div>
+            <div class="hidden" id="userDrop">
+                <ul>
+                    <li>Account Settings</li>
+                    <li id="sign-out">Sign Out</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="centerContentOuter">
+        <div class="centerContentInner">
+            <div id="projectsHeader">
+                <h2>Your Projects</h2>
+                <span id="createGraphButton" class="blueButton">Create Project</span>
+            </div>
+            <div id="projectList">
+                
+            </div>
+        </div>
+    </div>
+    <div id="createGraphPopup" class="hidden popupBack">
+        <div class="popupFront">
+            <div class="popupHeader">
+                <h2>Upload Data</h2>
+                <div id="createGraphCloseButton" class="popupCloseButton"></div>
+            </div>
+            <div id="csvUpload" class="uploadArea">
+                <p>Choose a CSV file to upload</p>
+                <p>or drag and drop a CSV file here</p>
+            </div>
+            <div id="csvUploadStatus" class="uploadStatus hidden">
+                <span class="csv-icon"></span>
+                <p id="csvFilename">...</p>
+                <span class="loading-icon"></span>
+            </div>
+            <input type="file" id="csvFile" accept="text/csv" class="hidden">
+            <p id="samplePrompt">or <span>get started with some sample data</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

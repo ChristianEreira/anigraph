@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anigraph</title>
+
+    <script src="index.bundle.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../">
+            <h1>Anigraph</h1>
+        </a>
+        <div>
+            <p id='signInButton' class="headerLink">Sign in or Sign up</p>
+        </div>
+    </header>
+    <div class="blueFeature">
+        <div class="featureHalf">
+            <p class="bigText">Create animated and interactive graphs</p>
+            <span id='featureButton'>Get Started</span>
+        </div>
+        <div class="featureHalf">
+            <p></p>
+        </div>
+    </div>
+    <div id="signInPopup" class="hidden popupBack">
+        <div class="popupFront">
+            <div class="popupHeader">
+                <h2>Sign in or Sign up</h2>
+                <div id="signInCloseButton" class="popupCloseButton"></div>
+            </div>
+            <div id="firebaseui-auth-container"></div>
+        </div>
+    </div>
+</body>
+
+</html>

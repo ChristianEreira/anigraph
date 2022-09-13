@@ -1,0 +1,557 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+$blue: #3661eb;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7f9;
+    font-family: "Poppins", sans-serif;
+
+    &.fullPage {
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #fff;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    height: 32px;
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        padding: 0 0 0 48px;
+        margin: 0;
+        color: $blue;
+        font-size: 20px;
+    }
+
+    #projectNameBox {
+        text-align: center;
+        width: auto;
+        border: 2px solid #9a9a9a;
+        padding: 4px 8px;
+        font-weight: 400;
+        border-radius: 8px;
+
+        &:hover,
+        &:active {
+            border: 2px solid #333333;
+        }
+    }
+
+    #profileImg {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        margin-right: 16px;
+    }
+
+    .headerLink {
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    #profileDropDownButton {
+        @include fa-icon-solid($fa-var-angle-down);
+
+        padding-left: 8px;
+    }
+
+    > div:last-child {
+        display: flex;
+        align-items: center;
+        margin-right: 48px;
+    }
+
+    #userDropTrigger {
+        display: flex;
+        align-items: center;
+        height: 32px;
+    }
+
+    #userDropTrigger:hover + #userDrop,
+    #userDropTrigger:focus + #userDrop,
+    #userDrop:hover {
+        display: block !important;
+    }
+
+    #userDrop {
+        position: fixed;
+        background: #ffffff;
+        top: 48px;
+        right: 64px;
+        border-radius: 8px;
+        padding: 28px 24px;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+            // color: #3661eb;
+
+            li {
+                padding: 4px 8px;
+                margin: 0;
+                cursor: pointer;
+
+                &:hover {
+                    background: #f5f7f9;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+.blueFeature {
+    background: $blue;
+    padding: 64px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-weight: 600;
+
+    #featureButton {
+        padding: 16px 32px;
+        margin: 64px 0 0 0;
+        cursor: pointer;
+        background: #fff;
+        color: $blue;
+        border-radius: 32px;
+        display: inline-block;
+    }
+}
+
+.featureHalf {
+    width: 50%;
+    margin: 32px;
+}
+
+.bigText {
+    font-size: 40px;
+}
+
+.popupBack {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+
+    .popupFront {
+        background: #fff;
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: all 0.2s ease-in-out;
+
+        .popupHeader {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+
+            h2 {
+                font-size: 16px;
+                margin: 0 0 0 0;
+                padding: 0;
+            }
+
+            .popupCloseButton {
+                cursor: pointer;
+                background: #ebebeb;
+                border-radius: 999px;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #5e5e5e;
+                font-size: 20px;
+
+                @include fa-icon-solid($fa-var-xmark);
+
+                &:hover {
+                    background: #d8d8d8;
+                    color: #333333;
+                }
+            }
+        }
+
+        .firebaseui-container,
+        .mdl-button,
+        .mdl-textfield__input {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .firebaseui-page-provider-sign-in > .firebaseui-card-content {
+            padding: 0;
+        }
+
+        .mdl-button--raised {
+            border-radius: 8px;
+        }
+    }
+}
+
+.centerContentOuter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 64px 0;
+}
+
+.centerContentInner {
+    width: 100%;
+    margin: 0 208px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#projectsHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #9a9a9a;
+    margin-bottom: 32px;
+
+    h2 {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#projectList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background: #ffffff;
+        border-radius: 16px;
+        width: 256px;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+
+        img {
+            width: 100%;
+            border-radius: 16px 16px 0 0;
+            border-bottom: 1px solid #9a9a9a;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+            padding: 8px 16px;
+            color: #333333;
+        }
+    }
+}
+
+.uploadArea {
+    background: rgba(54, 97, 235, 0.05);
+    border: 1px dashed #3661eb;
+    border-radius: 8px;
+    padding: 32px 64px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    p {
+        margin: 0;
+        padding: 0;
+
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+        transition: all 0.2s ease-in-out;
+
+        &:first-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: $blue;
+        }
+    }
+
+    &.dragging {
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            color: $blue;
+
+            &:first-child {
+                font-size: 14px;
+                font-weight: 400;
+                color: #333333;
+            }
+        }
+    }
+
+    &:hover,
+    &.dragging {
+        background: rgba(54, 97, 235, 0.1);
+    }
+}
+
+.uploadStatus {
+    display: flex;
+    padding: 32px 64px;
+    align-items: center;
+    color: #333333;
+
+    .csv-icon {
+        @include fa-icon-solid($fa-var-file-csv);
+        font-size: 32px;
+    }
+
+    .loading-icon {
+        @include fa-icon-solid($fa-var-circle-notch);
+        font-size: 32px;
+        color: $blue;
+        animation: rotate 1.5s linear infinite;
+    }
+
+    p {
+        margin: 0 64px 0 16px;
+        padding: 0;
+        font-size: 14px;
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#samplePrompt {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 32px 0 0 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+
+    span {
+        color: $blue;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.columnContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100%;
+    height: calc(100% - 64px);
+
+    .editColumn {
+        margin: 64px 32px 16px 32px;
+
+        .columnTab {
+            width: 250px;
+            padding: 16px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            .tabHeader {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0 16px;
+                cursor: pointer;
+
+                p {
+                    color: $blue;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .tabIcon {
+                    font-size: 24px;
+
+                    &.down {
+                        @include fa-icon-solid($fa-var-angle-down);
+                    }
+
+                    &.up {
+                        @include fa-icon-solid($fa-var-angle-up);
+                    }
+                }
+            }
+
+            .tabBody {
+                margin: 32px 16px 16px 16px;
+
+                &:not(.grid) {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: stretch;
+                    gap: 8px;
+                }
+
+                &.grid {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: 8px;
+
+                    .gridRight {
+                        text-align: right;
+
+                        select {
+                            height: 100%;
+                            max-width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .graphColumn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        #graph {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+#animationControls {
+    display: flex;
+    align-items: center;
+    margin: 32px;
+    gap: 16px;
+
+    #trackbar {
+        width: 300px;
+    }
+}
+
+#playButton {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    @include fa-icon-solid($fa-var-play);
+
+    &.pause {
+        @include fa-icon-solid($fa-var-pause);
+    }
+}
+
+.textView {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #f1f1f1;
+}
+
+.blueButton {
+    background: $blue;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.iconButton {
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: #f1f1f1;
+    }
+
+    &#shareButton span {
+        @include fa-icon-solid($fa-var-share-from-square);
+    }
+
+    &#imageButton span {
+        @include fa-icon-solid($fa-var-image);
+    }
+
+    &#videoButton span {
+        @include fa-icon-solid($fa-var-video);
+    }
+
+    & span {
+        margin-right: 16px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
