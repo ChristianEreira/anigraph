@@ -552,6 +552,37 @@ header {
     }
 }
 
+.spaceEvenly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 128px 0;
+}
+
+.iconFeature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: #333333;
+    max-width: 256px;
+
+    i {
+        font-size: 64px;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
 .hidden {
     display: none !important;
 }
